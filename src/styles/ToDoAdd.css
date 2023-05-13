@@ -1,0 +1,23 @@
+
+.ToDoAdd{
+    display: inline-block;
+    border-radius: 50px;
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    box-shadow: 5px 5px var(--line-color);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+
+}
+
+.ToDoAdd:active{
+    box-shadow: none;
+    transform: translate(5px ,5px);
+
+}
+
+.ToDoAdd img{
+    filter: drop-shadow(1px 1px var(--line-color));
+}
