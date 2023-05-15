@@ -33,7 +33,7 @@
 }
 
 .ToDoItem__checkbox:checked ~ .ToDoItem__text{
-    text-decoration-line: line-through;
+    text-decoration: line-through ;
    
 }
 

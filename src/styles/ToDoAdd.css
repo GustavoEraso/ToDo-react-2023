@@ -7,27 +7,29 @@
     box-shadow: 5px 5px var(--line-color);
     position: absolute;
     bottom: 20px;
-    right: 20px;  
+    right: 20px; 
+    transition: 500ms ease; 
 
 
 }
 
-.ToDoAdd:active{
-    
-    animation: ButtonPush 300ms ease;
-    
-    
-
+.ToDoAdd:active{    
+   
+    box-shadow: none;
+    transform: translate(5px ,5px);
+    transition: 200ms ease; 
 }
 
 .ToDoAdd img{
     filter: drop-shadow(1px 1px var(--line-color));
+    transition: 500ms ease; 
 }
 
-@keyframes ButtonPush{
-   
-    100%{
-        box-shadow: none;
-        transform: translate(5px ,5px);
-    }
+.ToDoAdd:active img{
+    transform: rotate(45deg);
+    filter: drop-shadow(1px 0px var(--line-color));
+    transition: 200ms ease; 
+
 }
+
+  
