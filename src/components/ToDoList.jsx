@@ -1,18 +1,20 @@
 import { ToDoItem } from "./ToDoItem"
 import '../styles/ToDoList.css'
-import { useState } from "react";
+
 
 function ToDoList({todos , resetTodos }){
 
-    const pendingTodos = todos.filter((todo)=>!todo.completed);
-    const completedTodos = todos.filter((todo)=>todo.completed);
-
+    const pendingTodos = todos.filter((todo)=>!todo.completed).sort((a,b)=> a.startDate - b.startDate);
+    const completedTodos = todos.filter((todo)=>todo.completed).sort((a,b)=> b.endingDate - a.endingDate);
+    
    
 
     const completedTodo = (id)=>{
+        const actuallyDate = new Date().getTime();       
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex((todo)=> todo.id == id)
+        const todoIndex = newTodos.findIndex((todo)=> todo.id === id)
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+        newTodos[todoIndex].endingDate = actuallyDate
         resetTodos(newTodos)
     }
 

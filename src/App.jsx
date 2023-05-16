@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import logo from './platzi.webp';
+import React, {  useState } from 'react'
 import './styles/App.css';
 import { ToDoTitle } from './components/ToDoTitle';
 import { ToDoInput } from './components/ToDoInput';
@@ -10,31 +9,39 @@ import { ToDoAdd } from './components/ToDoAdd';
 function App() {
   const defautlTodos = [
     {
-      text: 'comprar Pan',
+      text: ' 1 comprar Pan',
       completed: true,
-      id: 'sjfnlf'
+      id: 'sjfnlf',
+      startDate:1684200223000,
+      endingDate:null,
     },
     {
-      text: 'tirar basura',
+      text: '2 tirar basura',
       completed: true,
-      id: 'kjsdbEGD'
+      id: 'kjsdbEGD',
+      startDate:1684200224000,
+      endingDate:null,
     },
     {
-      text: 'Pintar casa',
+      text: '3 Pintar casa',
       completed: true,
-      id: 'ksdfuiw'
+      id: 'ksdfuiw',
+      startDate:1684200225000,
+      endingDate:null,
     },
     {
-      text: 'Terminar el curso',
+      text: '4 Terminar el curso',
       completed: false,
-      id: 'leruhfioearfoh'
+      id: 'leruhfioearfoh',
+      startDate:1684200226000,
+      endingDate:null,
     },
   ];
 
   const [todos , setTodos]= useState(defautlTodos);
 
-   function resetTodos(newTodo){
-    setTodos(newTodo)
+   function resetTodos(newTodoList){    
+    setTodos(newTodoList)
   }
   const [searchValue , setSearchValue] = useState('');
 
