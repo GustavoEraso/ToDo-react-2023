@@ -12,10 +12,38 @@ main{
   border-radius: 15px;
   outline: 3px solid var(--line-color);
   box-shadow: 10px 10px var(--line-color);
-
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  
-  background-color: var(--main-background);
+  gap: 10px;  
+  background: linear-gradient(312deg, var(--main-background), var(--item-background));  
+  /* background-color: var(--main-background); */
+}
+
+
+
+.App__open-deleted-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px; 
+  border-radius: 50%;
+  background-color: var(--item-background);
+  outline: 2px solid var(--line-color);
+  box-shadow: 5px 5px var(--line-color); 
+  transition: 500ms ease; 
+}
+
+.App__open-deleted-list:active{ 
+  box-shadow: none;
+  transform: translate(5px ,5px);
+  transition: 200ms ease; 
+}
+
+.App__open-deleted-list * {
+  width: 70%;
+  filter: drop-shadow( 1px 1px var(--line-color) )
 }

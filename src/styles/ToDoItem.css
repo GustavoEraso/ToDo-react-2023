@@ -43,4 +43,12 @@
     filter: drop-shadow(1px 1px var(--line-color));
     
 }
+.ToDoItem__restore-img{
+    height: 25px;
+    filter: drop-shadow(1px 1px var(--line-color));
+    /* background-color: var(--line-color); */
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 2px var(--line-color); */
+    
+}
 

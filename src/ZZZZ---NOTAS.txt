@@ -1,0 +1,94 @@
+ESTILOS EN SVG
+
+SI EL SVG TIENE LA PROPIEDAD FILL QUITARLA
+
+LUEGO IMPORTAR EL SVG COMO REACT COMPONET Y LE AGREAMOS EL NOMBRE CON AS PARA QUE NO GENERE CONFLICTO CON OTROS POSIBLE ICONOS
+
+            import {ReactComponent as "NOMBRE QUE LE QUEREMOS PONER AL ICONO"} from "./ruta del icono.svg"
+
+En este ejemplo se cre oun condicional con un objeto y se pasan las props en el componente.
+
+ej:
+
+´´´
+import { ReactComponent as DeleteIcon} from './ruta'
+import { ReactComponent as CheckIcon} from './ruta'
+
+
+en el siguiente obj agregamos llave con el nombre de dato que vamos a pasar por props, y agregamos el valor como una arrow function para poder pasarle en este caso color
+
+
+const iconTypes ={
+    "check" : (color)=> <CheckIcon className="icon-svg" fill={color},
+    "delete" : (color)=> <DeleteIcon className="icon-svg" fill={color}, 
+}
+
+function TodoIcon({type, color}){
+    return(
+        <span className={`Icon-container Icon-container-${type}`}> // esto es porque en este caso teniamos esas clases ya de antes y se le pasa el type dinamicamente.
+            {iconTypes[type](color)} // este es un bloque de js llama al bj iconTypes y devuelve el icono que le pasamos por props [type] es el value y como es una arrow function le pasamos entre () el color paraq ue modifique el fill 
+        </span>
+    )
+}
+
+export {TodoIcon}
+
+'''
+
+
+
+
+PARA SETEAR LOS DEFAULTTODOS
+
+  const defautlTodos = [
+    {
+      status:'completed',
+      text: ' 1 comprar Pan',
+      completed: true,
+      id: 'sjfnlf',
+      startDate:1684200223000,
+      endingDate:null,
+      deleted: {
+        state:false,
+        date:null
+      },
+    },
+    {
+      status:'completed',
+      text: '2 tirar basura',
+      completed: true,
+      id: 'kjsdbEGD',
+      startDate:1684200224000,
+      endingDate:null,
+      deleted: {
+        state:false,
+        date:null
+      },
+    },
+    {
+      status:'pending',
+      text: '3 Pintar casa',
+      completed: false,
+      id: 'ksdfuiw',
+      startDate:1684200225000,
+      endingDate:null,
+      deleted: {
+        state:false,
+        date:null
+      },
+    },
+    {
+      status:'deleted',
+      text: '4 desayunar',
+      completed: false,
+      id: 'leruhajsdksahdh',
+      startDate:1684200226000,
+      endingDate:null,
+      deleted: {
+          state:true,
+          date:1684500226000
+        },
+    },
+  ];
+  localStorage.removeItem('TODOS_V1')
+  localStorage.setItem('TODOS_V1',JSON.stringify(defautlTodos))

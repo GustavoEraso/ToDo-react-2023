@@ -1,3 +1,7 @@
+.ToDoList-main-container{
+    position: relative;
+}
+
 .ToDoList__ul{
     list-style: none;
     display: flex;
@@ -7,4 +11,14 @@
     padding-block: 10px;
     
 }
-
+/* .ToDoList__deleted-section{    
+    position:absolute;
+    top: 0;
+    z-index: 2;
+    outline: 2px solid var(--line-color);
+    border-radius: 15px;
+    background-color: var(--main-background);
+    width: 100%;
+    padding: 10px;
+}
+ */

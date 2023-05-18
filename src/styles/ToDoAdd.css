@@ -1,16 +1,18 @@
 
 .ToDoAdd{
-    display: inline-block;
-    border-radius: 50px;
-    width: 60px;
-    aspect-ratio: 1 / 1;
-    box-shadow: 5px 5px var(--line-color);
-    position: absolute;
-    bottom: 20px;
-    right: 20px; 
-    transition: 500ms ease; 
-
-
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;  
+  border-radius: 50%;
+  background-color: var(--item-background);
+  outline: 2px solid var(--line-color);
+  box-shadow: 5px 5px var(--line-color); 
+  transition: 500ms ease; 
 }
 
 .ToDoAdd:active{    
@@ -24,12 +26,12 @@
     filter: drop-shadow(1px 1px var(--line-color));
     transition: 500ms ease; 
 }
-
+/* 
 .ToDoAdd:active img{
     transform: rotate(45deg);
     filter: drop-shadow(1px 0px var(--line-color));
     transition: 200ms ease; 
 
-}
+} */
 
   
