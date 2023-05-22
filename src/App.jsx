@@ -18,22 +18,24 @@ function App() {
   const getToDos = ()=>{
     setLoading(true)
     const todosFromStorage = window.localStorage.getItem('TODOS_V1')
-    console.log('paso por aca')   
+    console.log('paso por getTodos()')   
     return JSON.parse(todosFromStorage);
    }
 
   useEffect(()=>{
     try {
       setError(false)
+         
       // if (true) {throw new Error("");return}
       setTimeout( ()=>{
         const todosFromStorage = getToDos();
         console.log(todosFromStorage)
         setTodos(todosFromStorage || []); 
-        setLoading(false)  
-      }, 500)   
+        setLoading(false)  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> cambiar
+      }, 2000)   
       
     } catch (error) {
+      setLoading(false)
       console.log('tuvimos un error') 
       setError(true) 
  

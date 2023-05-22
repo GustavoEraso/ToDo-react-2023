@@ -1,4 +1,5 @@
 import { ToDoItem } from "./ToDoItem"
+import { ToDoLoading } from "./ToDoLoaging";
 import '../styles/ToDoList.css'
 
 
@@ -26,10 +27,14 @@ function ToDoList({todos , resetTodos, error, loading}){
     }
 
    
-    if(loading){return(<p>estamos cargando tus tareas</p>)};
-    if(error) return(<p>vaya algo salio mal</p>)  
-    if(!todos.length) return(<p>no tines tareas</p>)  
-    if(todos.length > 0) return(
+    if(loading){
+        return(<ToDoLoading />)};
+    if(error) 
+        return(<p>vaya algo salio mal</p>)  
+    if(!todos.length) 
+        return(<p>no tines tareas</p>)  
+    if(todos.length > 0) 
+        return(
          <section className="ToDoList-main-container">
         {pendingTodos.length < 1
             ? null         

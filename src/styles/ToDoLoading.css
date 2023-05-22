@@ -1,0 +1,41 @@
+.ToDoLoading-main-container{
+    position: relative;
+}
+
+.ToDoLoading__ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-block: 10px;
+    
+}
+
+.ToDoLoadingItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: 1px solid var(--line-color);
+    box-shadow: 5px 5px var(--line-color);
+    border-radius: 50px;
+    padding: 0 5px;
+    min-height: 30px;
+    background: linear-gradient( 30deg, var(--main-background), var(--item-background), var(--input-background));  
+    background-size: 400%;
+    animation: LoadingItem 3s ease-in-out infinite;   
+}
+
+@keyframes LoadingItem {
+    
+    0%{
+        background-position: 0% 50%
+    }
+    50%{
+        background-position: 100% -50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
