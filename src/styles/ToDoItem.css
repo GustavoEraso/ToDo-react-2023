@@ -31,6 +31,9 @@
     background-color: var(--green);
     box-shadow: 3px 3px var(--line-color);
 }
+.ToDoItem__checkbox:disabled  + .ToDoItem__label-checkbox{   
+    opacity: 0;    
+}
 
 .ToDoItem__checkbox:checked ~ .ToDoItem__text{
     text-decoration: line-through ;

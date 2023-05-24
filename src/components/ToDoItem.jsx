@@ -2,14 +2,22 @@ import '../styles/ToDoItem.css'
 
 import {ReactComponent as DeleteImg} from '../assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
 import {ReactComponent as RestoreImg} from '../assets/icons/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg'
+import { useContext } from 'react'
+import { ToDoContext } from './ToDoContext'
 
 function ToDoItem({
   todo,
   onCompleted, 
   onDeleted,
   onRestore, 
-  disabled ,
+  disabled,
 }){ 
+
+  const {
+    completedTodo,
+    restoreTodo,
+    deleteTodo,
+  }= useContext(ToDoContext)
 
   // const fecha= new Date(todo.endingDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
@@ -21,7 +29,7 @@ function ToDoItem({
           name= {todo.id}
           checked={todo.completed} 
           id={todo.id} 
-          onChange={onCompleted}
+          onChange={()=>completedTodo(todo.id)}
           disabled = {disabled} 
            
       />
@@ -33,14 +41,14 @@ function ToDoItem({
             fill="#1ef25e"
             className='ToDoItem__restore-img'            
             alt={`Delete button for ${todo.text}`}
-            onClick={onRestore}
+            onClick={()=>restoreTodo(todo.id)}
                     
           />
           :<DeleteImg 
           fill="#f21e1e"
           className='ToDoItem__delete-img' 
           alt={`Delete button for ${todo.text}`}
-          onClick={onDeleted}
+          onClick={()=> deleteTodo(todo.id)}
           />
           
 
