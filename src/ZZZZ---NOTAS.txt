@@ -35,6 +35,115 @@ export {TodoIcon}
 
 '''
 
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-=====> CONTEXT <====-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+Para usar un contexto necesitamos:
+
+crear un componente de context ejemplo: ToDoContex.jsx (podemostener tantos como quieramos)
+
+en ese archivo creamos el contexto y el provider
+retornamos el contexto.Provider con una propiedad value={ } que dentro nombramos los datos 
+que queremos compartir en el contexto, en este caso dentro de un objeto.
+
+'''
+import React, { createContext} from "react"
+
+const ToDoContext = createContext(); 
+
+function ToDoProvider ({children}){
+ // antes del return agregamos toda la logica necesaria par el contexto
+
+  const [dato, setDato] = useState('')
+
+  const modificador = (nuevoDato)=> setDato(nuevoDato) 
+
+  return(
+        <ToDoContext.Provider value={{
+            dato,
+            modificador
+           }}>
+            {children}
+
+        </ToDoContext.Provider>
+
+
+    )
+}
+
+export{ToDoContext, ToDoProvider}
+
+'''
+
+luego envolvemos nuestra aplicacion en en este Provider, todos los hijos desde elcomponente que envuelvamos
+tendran accesos al contexto.
+
+'''
+
+import { ToDoProvider } from './components/ToDoContext';
+
+function App() {
+
+  const [toggleTrash,setToggleTrash] = useState(false)
+
+  function closeTrash(){
+    setToggleTrash(false)
+  }
+
+  return (
+    <ToDoProvider>      
+            
+        <ToDoTitle />
+        <ToDoInput />
+        <ToDoList />
+        <ToDoAdd/>
+        
+    </ToDoProvider>
+   
+  );
+}
+
+export {App};
+
+'''
+
+Luego en el componente hijo que quieramos usar el contexto, importamos el hook useContext de react y nuestro contexto.
+de esa manera podemos traer el contexto y usar sus datos.
+
+
+'''
+import { useContext } from 'react'
+import '../styles/ToDoTitle.css'
+import { ToDoContext } from './ToDoContext'
+
+
+function ToDoTitle(){
+    
+    const {dato} = useContext(ToDoContext);    
+
+    return totalTodosCounter === completedTodosCounter 
+        (<h1 className="ToDoTitle"> Estos son mis Datos del contexto: {dato}</h1>)
+       
+}
+
+  
+
+export {ToDoTitle}
+
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////7
+
 
 
 
