@@ -1,9 +1,14 @@
 import '../styles/ToDoNewToDo.css'
 
-import { useState } from 'react';
-import returnImg from '../assets/icons/reply_FILL0_wght400_GRAD0_opsz48.svg'
+import { useContext, useState } from 'react';
 
-function ToDoNewToDo({closeTrash}){
+import { ReactComponent as ReturnImg } from '../assets/icons/reply_FILL0_wght400_GRAD0_opsz48.svg';
+import { ToDoContext } from './ToDoContext';
+
+
+function ToDoNewToDo(){
+
+  const {setToggleModal}= useContext(ToDoContext)
 
     const [textareaValue, setTextareaValue] = useState('');
 
@@ -20,7 +25,7 @@ function ToDoNewToDo({closeTrash}){
 
     return(      
         <section className="ToDoNewToDo">
-            <span className='ToDoNewToDo__return' onClick={closeTrash}><img src={returnImg} alt="return to main button" /></span>
+            <span className='ToDoNewToDo__return' onClick={()=>setToggleModal(false)}><ReturnImg alt="return to main button" /></span>
             <h3>Nueva tarea:</h3>
             <form action="">
                 <label htmlFor="">Titulo</label>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import{ ReactComponent as TrashImg} from './assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
 
 import './styles/App.css';
@@ -8,34 +8,40 @@ import { ToDoList } from './components/ToDoList';
 import { ToDoDeletedList } from './components/ToDoDeletedList';
 import { ToDoNewToDo } from './components/ToDoNewToDo';
 import { ToDoAdd } from './components/ToDoAdd';
-import { ToDoProvider } from './components/ToDoContext';
+import { ToDoContext, ToDoProvider } from './components/ToDoContext';
+import { ToDoModal } from './components/ToDoModal';
 
 function App() {
-
-  const [toggleTrash,setToggleTrash] = useState(false)
-
+  
+  
+ 
   function closeTrash(){
     setToggleTrash(false)
   }
-
-  return (
-    <ToDoProvider>        
+  const {toggleModal, toggleTrash, setToggleTrash} = useContext(ToDoContext); 
+  
+  return (            
         <section className='main-container'>       
         <ToDoTitle />
         <ToDoInput />
         <ToDoList />   
         
         {toggleTrash
-          ?<ToDoDeletedList closeTrash={()=>closeTrash()}/>  
-          :<span className='App__open-deleted-list' onClick={()=>setToggleTrash(!toggleTrash)}>
+          ?<ToDoModal>
+             <ToDoDeletedList closeTrash={()=>closeTrash()}/>           
+           </ToDoModal> 
+          :null}
+          <span className='App__open-deleted-list' onClick={()=>setToggleTrash(!toggleTrash)}>
             <TrashImg fill="#f21e1e" alt="trash image for view trash button" />
           </span>      
-        }
         <ToDoAdd/>
-        {/* <ToDoNewToDo/> */}
+       {toggleModal 
+          ? <ToDoModal>
+              <ToDoNewToDo/>
+            </ToDoModal> 
+          : null}
 
-        </section>
-    </ToDoProvider>
+        </section>   
    
   );
 }

@@ -34,7 +34,7 @@ function ToDoItem({
            
       />
       <label className='ToDoItem__label-checkbox' htmlFor={todo.id}></label>
-      <span className='ToDoItem__text'>{todo.text}</span> 
+      <span className='ToDoItem__text'>{todo.title}</span> 
 
       {todo.status === 'deleted'
           ?<RestoreImg 

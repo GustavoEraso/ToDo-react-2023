@@ -1,13 +1,15 @@
 .ToDoDeletedList{    
     position:absolute;
-    bottom: 0;
     z-index: 2;
     outline: 2px solid var(--line-color);
     border-radius: 15px;
     background-color: var(--main-background);
     width: 100%;
-    height: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 90vh;
     padding: 10px;
+    box-shadow: 10px 10px var(--line-color);
     
 }
 

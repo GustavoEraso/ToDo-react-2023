@@ -22,7 +22,7 @@
     transition: 200ms ease; 
 }
 
-.ToDoAdd img{
+.ToDoAdd__img{
     filter: drop-shadow(1px 1px var(--line-color));
     transition: 500ms ease; 
 }

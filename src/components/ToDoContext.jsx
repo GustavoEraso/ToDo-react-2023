@@ -8,6 +8,8 @@ function ToDoProvider ({children}){
   const [error, setError] = useState(false);
   const [todos , setTodos]= useState([]);
   const [oldTodos, setOldTodos] = useState(todos) // lo uso como dependecia del useEffect 
+  const [toggleModal, setToggleModal] = useState(false);
+  const [toggleTrash,setToggleTrash] = useState(false);
   
   const deletedTodos = todos.filter((todo)=>todo.status ==='deleted').sort((a,b)=> b.endingDate - a.endingDate);
 
@@ -48,7 +50,7 @@ function ToDoProvider ({children}){
   const [searchValue , setSearchValue] = useState('');
   const searchedTodos = todos.filter(
     (todo)=>{
-      const todoText = todo.text.toLowerCase();
+      const todoText = todo.title.toLowerCase();
       const searchText = searchValue.toLowerCase()
       return todoText.includes(searchText)});
 
@@ -105,6 +107,10 @@ const deleteTodo = (id)=>{
             deletedTodos,
             completedTodosList,
             pendingTodosList,
+            toggleModal,
+            setToggleModal,
+            toggleTrash,
+            setToggleTrash,
         }}>
             {children}
 

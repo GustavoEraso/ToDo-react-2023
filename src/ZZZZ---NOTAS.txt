@@ -152,7 +152,8 @@ PARA SETEAR LOS DEFAULTTODOS
   const defautlTodos = [
     {
       status:'completed',
-      text: ' 1 comprar Pan',
+      title: ' 1 comprar Pan',
+      description:'descrpcino 1',
       completed: true,
       id: 'sjfnlf',
       startDate:1684200223000,
@@ -164,7 +165,8 @@ PARA SETEAR LOS DEFAULTTODOS
     },
     {
       status:'completed',
-      text: '2 tirar basura',
+      title: ' 2 comprar Pan',
+      description:' descrpcion 2',
       completed: true,
       id: 'kjsdbEGD',
       startDate:1684200224000,
@@ -176,7 +178,8 @@ PARA SETEAR LOS DEFAULTTODOS
     },
     {
       status:'pending',
-      text: '3 Pintar casa',
+      title: ' 3 comprar Pan',
+      description:' descripcion 3',
       completed: false,
       id: 'ksdfuiw',
       startDate:1684200225000,
@@ -188,8 +191,8 @@ PARA SETEAR LOS DEFAULTTODOS
     },
     {
       status:'deleted',
-      text: '4 desayunar',
-      completed: false,
+      title: ' 4 comprar Pan',
+      description:' descripcion 4',
       id: 'leruhajsdksahdh',
       startDate:1684200226000,
       endingDate:null,
