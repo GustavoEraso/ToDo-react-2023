@@ -18,36 +18,36 @@ function ToDoList(){
     if(searchedTodos.length > 0) 
         return(
          <section className="ToDoList-main-container">
-        {pendingTodosList.length < 1
-            ? null         
-            :<section>
-                <h3>Tareas Pendientes:</h3>           
-                <ul className="ToDoList__ul">            
-                    {pendingTodosList.length === 0 
-                        ? <li><h5>Bien! no hay tareas pendientes</h5></li> 
-                        : pendingTodosList.map((todo)=>
+            {pendingTodosList.length < 1
+                ? null         
+                :<section>
+                    <h3>Tareas Pendientes:</h3>           
+                    <ul className="ToDoList__ul">            
+                        {pendingTodosList.length === 0 
+                            ? <li><h5>Bien! no hay tareas pendientes</h5></li> 
+                            : pendingTodosList.map((todo)=>
+                                <ToDoItem 
+                                todo={todo}
+                                key={todo.id}
+                                />)
+                        }
+                    </ul>      
+                </section>
+            }   
+            {completedTodosList.length < 1
+                ? null         
+                :<section>
+                    <h3>Tareas Completadas:</h3>
+                    <ul className="ToDoList__ul">            
+                        {completedTodosList.map((todo)=>
                             <ToDoItem 
                             todo={todo}
-                            key={todo.id}
-                            />)
-                    }
-                </ul>      
-            </section>
-        }
-        {completedTodosList.length < 1
-            ? null         
-            :<section>
-                <h3>Tareas Completadas:</h3>
-                <ul className="ToDoList__ul">            
-                    {completedTodosList.map((todo)=>
-                        <ToDoItem 
-                        todo={todo}
-                        key={todo.id}                                          
-                        />)}                   
-                </ul>
-             </section>
-        }       
-    </section>
+                            key={todo.id}                                          
+                            />)}                   
+                    </ul>
+                </section>
+              }       
+         </section>
     )
 }
 

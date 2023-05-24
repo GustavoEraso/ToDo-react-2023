@@ -13,7 +13,7 @@ function ToDoProvider ({children}){
   
   const deletedTodos = todos.filter((todo)=>todo.status ==='deleted').sort((a,b)=> b.endingDate - a.endingDate);
 
-  const getToDos = ()=>{
+    const getToDos = ()=>{
     setLoading(true)
     const todosFromStorage = window.localStorage.getItem('TODOS_V1')
       
@@ -45,7 +45,7 @@ function ToDoProvider ({children}){
     setOldTodos(newTodoList)
     localStorage.removeItem('TODOS_V1')
     localStorage.setItem('TODOS_V1',JSON.stringify(newTodoList))
-  }
+    }
 
   const [searchValue , setSearchValue] = useState('');
   const searchedTodos = todos.filter(
@@ -59,6 +59,32 @@ function ToDoProvider ({children}){
 
   const pendingTodosList = searchedTodos.filter((todo)=>todo.status ==='pending' ).sort((a,b)=> a.startDate - b.startDate);
   const completedTodosList = searchedTodos.filter((todo)=>todo.status ==='completed').sort((a,b)=> b.endingDate - a.endingDate);
+
+  const createTodo = (
+    { title = '', description = ''} = {})=> {
+
+    const newTodo = {
+      status: 'pending',
+      title,
+      description,
+      completed: false,
+      id:`ID${new Date().getTime()}`,
+      startDate: new Date().getTime(),
+      endingDate: null,
+      deleted: {
+        state: false,
+        date: null
+      }
+    };
+
+    const newTodoList = [newTodo,...todos];
+
+    resetTodos(newTodoList)
+
+  };
+  
+ 
+
 
   const completedTodo = (id)=>{
     const actuallyDate = new Date().getTime();       
@@ -94,7 +120,8 @@ const deleteTodo = (id)=>{
         <ToDoContext.Provider value={{
             completedTodosCounter,
             totalTodosCounter,
-            todos , 
+            todos,
+            createTodo, 
             resetTodos, 
             error, 
             loading,

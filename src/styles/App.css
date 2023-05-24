@@ -15,8 +15,8 @@ main{
   display: flex;
   flex-direction: column;
   gap: 10px;  
-  background: linear-gradient(312deg, var(--main-background), var(--item-background));  
-
+  background: linear-gradient(312deg, var(--main-background), var(--item-background));
+  
 }
 
 

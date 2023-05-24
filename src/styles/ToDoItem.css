@@ -12,6 +12,9 @@
 
     
 }
+.ToDoItem__text{
+    font-weight: 700;
+}
 
 .ToDoItem__label-checkbox{
     height: 20px;

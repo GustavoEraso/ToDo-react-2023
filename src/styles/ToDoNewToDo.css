@@ -13,6 +13,10 @@
     
 }
 
+.TodoNewToDo__title{
+    font-weight: 900;
+}
+
 .ToDoNewToDo__ul{
     list-style: none;
     display: flex;
@@ -30,5 +34,6 @@
     resize: none;   
     border: none;
     outline: none;
+    font-weight: 900;
 }
 

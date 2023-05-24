@@ -1,6 +1,17 @@
 .ToDoList-main-container{
     position: relative;
+    overflow: scroll;
+    padding: 0 10px;
+    max-height: 78%;
+    
+    border-radius: 15px;
+    
 }
+
+.ToDoList-main-container::-webkit-scrollbar {
+    width: 0;
+  }  
+ 
 
 .ToDoList__ul{
     list-style: none;
@@ -11,14 +22,4 @@
     padding-block: 10px;
     
 }
-/* .ToDoList__deleted-section{    
-    position:absolute;
-    top: 0;
-    z-index: 2;
-    outline: 2px solid var(--line-color);
-    border-radius: 15px;
-    background-color: var(--main-background);
-    width: 100%;
-    padding: 10px;
-}
- */
+
