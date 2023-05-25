@@ -1,4 +1,5 @@
 import '../styles/ToDoNewToDo.css'
+import { ToDoButton } from './ToDoButton';
 
 import { useContext, useState } from 'react';
 
@@ -19,36 +20,35 @@ function ToDoNewToDo(){
   const [textareaValue, setTextareaValue] = useState('');
 
   const handleAdd = ()=>{
-    createTodo(
-      {
-      title:textTitle, 
-      description:textareaValue
-      })
-      setToggleModal(false)
-
+    if(textTitle !== ''){
+      createTodo(
+        {
+          title:textTitle, 
+        description:textareaValue
+        })
+      setToggleModal(false)}
+  }
+  const handleCancel = ()=>{
+    setToggleModal(false)
+    
   }
     
 
     return(      
         <section className="ToDoNewToDo">
-            <span className='ToDoNewToDo__return' onClick={()=>setToggleModal(false)}><ReturnImg alt="return to main button" /></span>
+            <span className='ToDoNewToDo__return' onClick={()=>handleCancel()}><ReturnImg alt="return to main button" /></span>
             <h3>Nueva tarea:</h3>
-            <form action="">
-                <label htmlFor="">Titulo:</label>
+            <form className='ToDoNewToDo__form' action="" onSubmit={(event)=>{event.preventDefault();}} >
                 <input 
-                className='TodoNewToDo__title'
+                className='TodoNewToDo__title-box'
                 placeholder='Ingresa una tarea'
-                type="text"   
-                name="" 
-                id=""
+                type="text"                 
                 value={textTitle}
                 onChange={(e)=>setTextTitle(e.target.value.toUpperCase())}                  
                 />
-                <label htmlFor="">Descripción:</label> 
-                <textarea 
-                  placeholder='Si lo crees necesario ingresa una descripcion'
-                  name="" 
-                  id="" 
+                <label>Descripción:</label> 
+                <textarea                   
+                  placeholder='Ingresa una descripcion si lo crees necesario'                  
                   cols="1" rows="4"
                   value={textareaValue}
                   onChange={(e)=>setTextareaValue(e.target.value)}
@@ -56,11 +56,17 @@ function ToDoNewToDo(){
                   className="ToDoNewToDo__description"
                 ></textarea>
 
-                <input 
-                  type="button" 
-                  value="agregar" 
-                  onClick={handleAdd}
-                 />
+                <ToDoButton 
+                  type= 'cancel'
+                  handleClick={handleCancel}>
+                   Cancelar
+                </ToDoButton>                  
+                <ToDoButton 
+                  handleClick={handleAdd}>
+                   Agregar
+                </ToDoButton>                  
+                  
+               
             </form>
 
             

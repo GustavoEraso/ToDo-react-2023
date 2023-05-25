@@ -26,12 +26,5 @@
     filter: drop-shadow(1px 1px var(--line-color));
     transition: 500ms ease; 
 }
-/* 
-.ToDoAdd:active img{
-    transform: rotate(45deg);
-    filter: drop-shadow(1px 0px var(--line-color));
-    transition: 200ms ease; 
-
-} */
 
   
