@@ -1,0 +1,22 @@
+
+.PopupConfirmation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto 50px;
+    gap: 5px;
+    position:absolute;   
+    z-index: 2;
+    outline: 2px solid var(--line-color);
+    border-radius: 15px;
+    background-color: var(--main-background);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 90vh;
+    padding: 10px;
+    box-shadow: 10px 10px var(--line-color);
+}
+.PopupConfirmation__question{
+    grid-column:  1/ 3;
+    text-align: center;
+}

@@ -1,0 +1,25 @@
+
+.ToDoButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--white);
+    outline: 2px solid var(--line-color);
+    box-shadow: 5px 5px var(--line-color); 
+    width: 80%;
+    height: 80%;
+    place-self: center;
+    font-weight: 700;
+    
+}
+
+.ToDoButton--cancel{
+    background-color: var(--red);
+    color: var(--white);
+}
+.ToDoButton--confirm{
+    background-color: var(--green);
+    
+}
