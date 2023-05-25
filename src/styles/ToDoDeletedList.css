@@ -11,7 +11,23 @@
     padding: 10px;
     box-shadow: 10px 10px var(--line-color);
     
+    
 }
+.ToDoDeletedList::-webkit-scrollbar {
+    width: 0;
+}  
+
+.ToDoDeletedList__ul-contanier{        
+    position:relative;
+    outline: 2px solid var(--line-color);
+    border-radius: 15px;
+    background-color: var(--main-background);
+    width: 100%;   
+    height: auto;
+    max-height: calc(100vh - 180px);
+    padding: 10px;    
+    overflow: scroll;
+  }
 
 .ToDoDeletedList__ul{
     list-style: none;
@@ -20,6 +36,7 @@
     justify-content: center;
     gap: 10px;
     padding-block: 10px;
+   
     
 }
 

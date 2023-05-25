@@ -14,6 +14,7 @@ function ToDoDeletedList({closeTrash}){
         <section className="ToDoDeletedList">
             <span className='ToDoDeletedList__return' onClick={closeTrash}><ReturnImg  alt="return to main button" /></span>
             <h3>Tareas Eliminadas:</h3>
+            <section className='ToDoDeletedList__ul-contanier'>
             <ul className="ToDoDeletedList__ul">            
                 {deletedTodos.map((todo)=>
                     <ToDoItem 
@@ -22,6 +23,7 @@ function ToDoDeletedList({closeTrash}){
                     disabled                    
                     />)}                   
             </ul>
+            </section>
         </section>
     )
 }

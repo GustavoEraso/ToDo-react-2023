@@ -2,10 +2,8 @@
     position: relative;
     overflow: scroll;
     padding: 0 10px;
-    max-height: 78%;
-    
-    border-radius: 15px;
-    
+    max-height: 78%;    
+    border-radius: 15px;    
 }
 
 .ToDoList-main-container::-webkit-scrollbar {
