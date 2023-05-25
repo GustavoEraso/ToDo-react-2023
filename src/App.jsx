@@ -8,13 +8,17 @@ import { ToDoList } from './components/ToDoList';
 import { ToDoDeletedList } from './components/ToDoDeletedList';
 import { ToDoNewToDo } from './components/ToDoNewToDo';
 import { ToDoAdd } from './components/ToDoAdd';
-import { ToDoContext, ToDoProvider } from './components/ToDoContext';
 import { ToDoModal } from './components/ToDoModal';
+import {PopupConfirmation} from './components/PopupConfirmation'
+import { ToDoContext, ToDoProvider } from './components/ToDoContext';
+
 
 function App() {
   
   
- 
+ function prueba(){
+  console.log('funcion de prueba')
+ }
   function closeTrash(){
     setToggleTrash(false)
   }
@@ -40,6 +44,11 @@ function App() {
               <ToDoNewToDo/>
             </ToDoModal> 
           : null}
+          <ToDoModal>
+            <PopupConfirmation 
+            question='seguro hola hola hola hola  que deseas eliminar'
+            handleConfirmation={prueba} />
+          </ToDoModal>
 
         </section>   
    

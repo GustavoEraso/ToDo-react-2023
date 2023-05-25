@@ -62,6 +62,7 @@ function ToDoNewToDo(){
                    Cancelar
                 </ToDoButton>                  
                 <ToDoButton 
+                  type= 'confirm'
                   handleClick={handleAdd}>
                    Agregar
                 </ToDoButton>                  
