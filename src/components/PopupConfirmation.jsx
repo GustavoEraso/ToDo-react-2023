@@ -4,27 +4,39 @@ import { useContext } from 'react'
 import { ToDoContext } from './ToDoContext'
 
 
-function PopupConfirmation({question ,handleConfirmation}){
+function PopupConfirmation(
+    {
+        question ,
+        handleConfirmation, 
+        handleCancel,
+        cancelText,
+        confirmText,
+        onlyConfirm,
+     }){
     const {setToggleModal} = useContext(ToDoContext)
     
-    const handleCancel = ()=>{
-        console.log('adkafb')       
-        setToggleModal(false) 
-      }
+    const defaultHandleCancel = ()=>{             
+        setToggleModal(false)  }
+    
 
     return(
         <section className="PopupConfirmation">
-            <h3 className="PopupConfirmation__question">{question}</h3>
-            <ToDoButton 
-            type='cancel'
-            handleClick={handleCancel}
-                >Cancelar
-            </ToDoButton>
-            <ToDoButton
-                type= 'confirm'
-                handleClick={handleConfirmation}
-                >Confirmar
-            </ToDoButton>
+            {question.map((text, index)=><h3 key={`${text}-${index}`} className="PopupConfirmation__question">{text}</h3>)}
+            
+            <section className='PopupConfirmation__button-container'>
+                {!onlyConfirm 
+                ?<ToDoButton 
+                type='cancel'
+                handleClick={handleCancel || defaultHandleCancel}
+                >{cancelText || 'Cancelar'}
+                    </ToDoButton>
+                    :null}
+                    <ToDoButton
+                        type= 'confirm'
+                        handleClick={handleConfirmation}
+                        >{confirmText || 'Confirmar'}
+                    </ToDoButton>
+            </section>
 
         </section>
     )

@@ -2,8 +2,10 @@ import '../styles/ToDoItem.css'
 
 import {ReactComponent as DeleteImg} from '../assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
 import {ReactComponent as RestoreImg} from '../assets/icons/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { ToDoContext } from './ToDoContext'
+import { PopupConfirmation } from './PopupConfirmation'
+import { ToDoModal } from './ToDoModal'
 
 function ToDoItem({
   todo,
@@ -21,7 +23,22 @@ function ToDoItem({
 
   // const fecha= new Date(todo.endingDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
-  return(
+  const [deleteState, setDeleteState] = useState(false)
+  const [restoreState, setRestoreState] = useState(false)
+  const[currentTodo, setCurrentTodo] = useState({})
+
+  
+
+function handleDelete(todo){
+  setCurrentTodo(todo)
+  setDeleteState(true)    
+}
+function handleRestore(todo){
+  setCurrentTodo(todo)
+  setRestoreState(true)    
+}
+return(
+<>
     <li className='ToDoItem' key={todo.id}>
       <input 
           className='ToDoItem__checkbox' 
@@ -41,19 +58,42 @@ function ToDoItem({
             fill="#1ef25e"
             className='ToDoItem__restore-img'            
             alt={`Delete button for ${todo.text}`}
-            onClick={()=>restoreTodo(todo.id)}
+            onClick={()=>handleRestore(todo)}
                     
           />
           :<DeleteImg 
           fill="#f21e1e"
           className='ToDoItem__delete-img' 
           alt={`Delete button for ${todo.text}`}
-          onClick={()=> deleteTodo(todo.id)}
-          />
+          onClick={()=>handleDelete(todo)}     />
+          
           
 
-      }     
+      } 
+
    </li>
+      {!deleteState
+          ?null
+          :<ToDoModal>
+            <PopupConfirmation
+            question={["Desea enviar a la papelera" ,`"${currentTodo.title}"`]}
+            handleConfirmation={()=>deleteTodo(currentTodo.id)}
+            handleCancel={()=>setDeleteState(false)}
+            />
+          </ToDoModal>  
+      }    
+      {!restoreState
+          ?null
+          :<ToDoModal>
+            <PopupConfirmation
+            // question={`Desea restaurar "${currentTodo.title}"`}
+            question={['Desea restaurar ',`"${currentTodo.title}"`]}
+            handleConfirmation={()=>restoreTodo(currentTodo.id)}
+            handleCancel={()=>setRestoreState(false)}
+            />
+          </ToDoModal>  
+      }    
+  </>
  )
 }
 

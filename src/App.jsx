@@ -44,11 +44,15 @@ function App() {
               <ToDoNewToDo/>
             </ToDoModal> 
           : null}
-          <ToDoModal>
+          {/* <ToDoModal>
             <PopupConfirmation 
-            question='seguro hola hola hola hola  que deseas eliminar'
-            handleConfirmation={prueba} />
-          </ToDoModal>
+            question='seguro  hola hola hola  que deseas eliminar'
+            handleConfirmation={prueba}
+            handleCancel={()=> console.log('custom hanlde cancel')}
+            cancelText={'dale like'} 
+            // onlyConfirm
+            />
+          </ToDoModal> */}
 
         </section>   
    
