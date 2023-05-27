@@ -21,3 +21,12 @@
     
 }
 
+ /* Estilos para Firefox */
+ .ToDoList-main-container {
+    scrollbar-width: none; /* Oculta el scrollbar de Firefox */
+  }  
+  
+  .ToDoList-main-container::-moz-scrollbar {
+    display: none; /* Oculta el scrollbar de Firefox */
+  }
+

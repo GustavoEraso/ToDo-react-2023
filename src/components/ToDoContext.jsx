@@ -113,6 +113,11 @@ const deleteTodo = (id)=>{
     resetTodos(newTodos)
 }
 
+const empyTrash=()=>{
+    const newTodoList = todos.filter((todo)=> todo.status !== 'deleted')
+    resetTodos(newTodoList)
+}
+
  
  
    
@@ -132,6 +137,7 @@ const deleteTodo = (id)=>{
             restoreTodo,
             deleteTodo,
             deletedTodos,
+            empyTrash,
             completedTodosList,
             pendingTodosList,
             toggleModal,

@@ -11,13 +11,29 @@
     padding: 10px;
     box-shadow: 10px 10px var(--line-color);
     
-    
 }
-.ToDoDeletedList::-webkit-scrollbar {
-    width: 0;
-}  
 
-.ToDoDeletedList__ul-contanier{        
+
+.ToDoDeletedList__head-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ToDoDeletedList__delete-for-ever{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+    aspect-ratio: 1 / 1;
+    border-radius: 50px;
+    background-color: var(--item-background);
+    outline: 2px solid var(--line-color);
+    box-shadow: 5px 5px var(--line-color);
+    font-weight: 700;
+}
+
+
+.ToDoDeletedList__ul-container{        
     position:relative;
     outline: 2px solid var(--line-color);
     border-radius: 15px;
@@ -28,6 +44,9 @@
     padding: 10px;    
     overflow: scroll;
   }
+.ToDoDeletedList__ul-container::-webkit-scrollbar {
+    width: 0;
+}  
 
 .ToDoDeletedList__ul{
     list-style: none;
@@ -35,8 +54,22 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    padding-block: 10px;
-   
+    padding-block: 10px; 
     
 }
 
+.ToDoDeletedList__ul-container::-webkit-scrollbar {
+    display: none;
+  }  
+
+
+
+  /* Estilos para Firefox */
+.ToDoDeletedList__ul-container {
+    scrollbar-width: none; /* Oculta el scrollbar de Firefox */
+  }
+  
+  
+  .ToDoDeletedList__ul-container::-moz-scrollbar {
+    display: none; /* Oculta el scrollbar de Firefox */
+  }

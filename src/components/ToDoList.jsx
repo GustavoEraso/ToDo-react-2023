@@ -18,6 +18,7 @@ function ToDoList(){
     if(searchedTodos.length > 0) 
         return(
          <section className="ToDoList-main-container">
+            
             {pendingTodosList.length < 1
                 ? null         
                 :<section>
@@ -46,7 +47,8 @@ function ToDoList(){
                             />)}                   
                     </ul>
                 </section>
-              }       
+              }  
+                  
          </section>
     )
 }
