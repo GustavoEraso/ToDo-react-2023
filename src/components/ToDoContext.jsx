@@ -7,9 +7,11 @@ function ToDoProvider ({children}){
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [todos , setTodos]= useState([]);
-  const [oldTodos, setOldTodos] = useState(todos) // lo uso como dependecia del useEffect 
-  const [toggleModal, setToggleModal] = useState(false);
+  const[currentTodo, setCurrentTodo] = useState({})
+  const [toggleNewTodoModal, settoggleNewTodoModal] = useState(false);
+  const [toggleItemDetailModal, setToggleItemDetailModal] = useState(false);
   const [toggleTrash,setToggleTrash] = useState(false);
+  const [oldTodos, setOldTodos] = useState(todos) // lo uso como dependecia del useEffect 
   
   const deletedTodos = todos.filter((todo)=>todo.status ==='deleted').sort((a,b)=> b.endingDate - a.endingDate);
 
@@ -126,6 +128,8 @@ const empyTrash=()=>{
             completedTodosCounter,
             totalTodosCounter,
             todos,
+            currentTodo, 
+            setCurrentTodo,
             createTodo, 
             resetTodos, 
             error, 
@@ -140,8 +144,10 @@ const empyTrash=()=>{
             empyTrash,
             completedTodosList,
             pendingTodosList,
-            toggleModal,
-            setToggleModal,
+            toggleNewTodoModal,
+            settoggleNewTodoModal,
+            toggleItemDetailModal, 
+            setToggleItemDetailModal,
             toggleTrash,
             setToggleTrash,
         }}>

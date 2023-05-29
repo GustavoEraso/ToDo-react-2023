@@ -13,10 +13,10 @@ function PopupConfirmation(
         confirmText,
         onlyConfirm,
      }){
-    const {setToggleModal} = useContext(ToDoContext)
+    const {settoggleNewTodoModal} = useContext(ToDoContext)
     
     const defaultHandleCancel = ()=>{             
-        setToggleModal(false)  }
+        settoggleNewTodoModal(false)  }
     
 
     return(

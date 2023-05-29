@@ -5,10 +5,10 @@ import { useContext } from 'react'
 import { ToDoContext } from './ToDoContext'
 
 function ToDoAdd(){
-    const {toggleModal, setToggleModal} = useContext(ToDoContext)
+    const {toggleNewTodoModal, settoggleNewTodoModal} = useContext(ToDoContext)
     
     return(
-        <span className="ToDoAdd"onClick={()=>setToggleModal(!toggleModal)} ><AddIcon alt="add button" className= 'ToDoAdd__img' /></span>   )
+        <span className="ToDoAdd"onClick={()=>settoggleNewTodoModal(!toggleNewTodoModal)} ><AddIcon alt="add button" className= 'ToDoAdd__img' /></span>   )
 }
 
 export {ToDoAdd}

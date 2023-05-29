@@ -24,7 +24,9 @@ function ToDoDeletedList({closeTrash}){
         <section className="ToDoDeletedList">
             <section className="ToDoDeletedList__head-section">
             <span className='ToDoDeletedList__return' onClick={closeTrash}><ReturnImg  alt="return to main button" /></span>
-            <span className='ToDoDeletedList__delete-for-ever' onClick={handleEmpyTrash}><DeleteForEverImg fill="red" alt="delete for ever button" /></span>
+            <span className='ToDoDeletedList__delete-for-ever' onClick={handleEmpyTrash}>
+                <span className='ToDoDeletedList__empy-text'>Vaciar</span> 
+                <DeleteForEverImg className="ToDoDeletedList__empy-img" fill="red" alt="delete for ever button" /></span>
             
             </section>
             <h3>Tareas Eliminadas:</h3>

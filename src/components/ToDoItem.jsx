@@ -1,17 +1,16 @@
 import '../styles/ToDoItem.css'
 
-import {ReactComponent as DeleteImg} from '../assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
-import {ReactComponent as RestoreImg} from '../assets/icons/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg'
 import { useContext, useState } from 'react'
 import { ToDoContext } from './ToDoContext'
 import { PopupConfirmation } from './PopupConfirmation'
 import { ToDoModal } from './ToDoModal'
 
+import {ReactComponent as DeleteImg} from '../assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
+import {ReactComponent as RestoreImg} from '../assets/icons/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg'
+
+
 function ToDoItem({
-  todo,
-  onCompleted, 
-  onDeleted,
-  onRestore, 
+  todo, 
   disabled,
 }){ 
 
@@ -19,14 +18,16 @@ function ToDoItem({
     completedTodo,
     restoreTodo,
     deleteTodo,
+    currentTodo, 
+    setCurrentTodo,
+    setToggleItemDetailModal,
   }= useContext(ToDoContext)
 
   // const fecha= new Date(todo.endingDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   const [deleteState, setDeleteState] = useState(false)
   const [restoreState, setRestoreState] = useState(false)
-  const[currentTodo, setCurrentTodo] = useState({})
-
+  
   
 
 function handleDelete(todo){
@@ -51,7 +52,15 @@ return(
            
       />
       <label className='ToDoItem__label-checkbox' htmlFor={todo.id}></label>
-      <span className='ToDoItem__text'>{todo.title}</span> 
+      <span 
+      className='ToDoItem__text'
+      onClick={()=>
+      {
+        setToggleItemDetailModal(true);
+        setCurrentTodo(todo);
+      }}>
+        {todo.title}
+      </span> 
 
       {todo.status === 'deleted'
           ?<RestoreImg 

@@ -17,20 +17,52 @@
 .ToDoDeletedList__head-section{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .ToDoDeletedList__delete-for-ever{   
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     /* padding: 5px; */
-    aspect-ratio: 1 / 1;
+    height: 40px;
+    width: 40px;   
     border-radius: 50px;
     background-color: var(--item-background);
     outline: 2px solid var(--line-color);
     box-shadow: 5px 5px var(--line-color);
     font-weight: 700;
+    transition: 0.8s width;
+    overflow: hidden;
 }
+
+.ToDoDeletedList__empy-text{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);    
+    transition: 0.5s opacity, 0.5s visibility, 0.5s transform;
+
+}
+.ToDoDeletedList__delete-for-ever:hover .ToDoDeletedList__empy-text{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);   
+    transition: 0.5s opacity, 0.5s visibility,0.5s transform;
+
+}
+.ToDoDeletedList__delete-for-ever:hover{
+    width: 100px;
+    transition: 0.5s width;
+}
+
+.ToDoDeletedList__empy-img{
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+
 
 
 .ToDoDeletedList__ul-container{        

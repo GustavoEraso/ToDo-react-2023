@@ -9,7 +9,7 @@ import { ToDoContext } from './ToDoContext';
 
 function ToDoNewToDo(){
 
-  const {setToggleModal, createTodo }= useContext(ToDoContext)  
+  const {settoggleNewTodoModal, createTodo }= useContext(ToDoContext)  
  
   const handleResize = (event) => {
     event.target.style.height = 'auto';
@@ -26,10 +26,10 @@ function ToDoNewToDo(){
           title:textTitle, 
         description:textareaValue
         })
-      setToggleModal(false)}
+      settoggleNewTodoModal(false)}
   }
   const handleCancel = ()=>{
-    setToggleModal(false)
+    settoggleNewTodoModal(false)
     
   }
     
