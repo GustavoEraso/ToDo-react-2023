@@ -12,6 +12,19 @@ function ToDoProvider ({children}){
   const [toggleItemDetailModal, setToggleItemDetailModal] = useState(false);
   const [toggleTrash,setToggleTrash] = useState(false);
   const [oldTodos, setOldTodos] = useState(todos) // lo uso como dependecia del useEffect 
+  const translate = (text)=>{
+  
+  const dic = {
+    completed : 'Completado',
+    pending: 'Pendiente',
+    deleted: 'Eliminado'
+  }
+  const toReturn = dic[text] || text
+  return toReturn
+}
+const transformDate = (date)=>{
+  return new Date(date).toLocaleTimeString([], {day: '2-digit',month: '2-digit',year: '2-digit',hour: '2-digit', minute: '2-digit'})
+}
   
   const deletedTodos = todos.filter((todo)=>todo.status ==='deleted').sort((a,b)=> b.endingDate - a.endingDate);
 
@@ -105,6 +118,13 @@ const restoreTodo = (id)=>{
     newTodos[todoIndex].deleted = {state:false, date:null};
     resetTodos(newTodos)
 }
+const editTodo = ({id, newTitle, newDescription})=>{        
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo)=> todo.id === id)
+    newTodos[todoIndex].title = newTitle;
+    newTodos[todoIndex].description = newDescription;
+    resetTodos(newTodos)
+}
 
 const deleteTodo = (id)=>{
     const actuallyDate = new Date().getTime();       
@@ -139,6 +159,7 @@ const empyTrash=()=>{
             searchedTodos,
             completedTodo,
             restoreTodo,
+            editTodo,
             deleteTodo,
             deletedTodos,
             empyTrash,
@@ -150,6 +171,8 @@ const empyTrash=()=>{
             setToggleItemDetailModal,
             toggleTrash,
             setToggleTrash,
+            translate,
+            transformDate,
         }}>
             {children}
 
