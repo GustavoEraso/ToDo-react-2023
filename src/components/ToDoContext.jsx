@@ -12,13 +12,13 @@ function ToDoProvider ({children}){
   const [toggleItemDetailModal, setToggleItemDetailModal] = useState(false);
   const [toggleTrash,setToggleTrash] = useState(false);
   const [oldTodos, setOldTodos] = useState(todos) // lo uso como dependecia del useEffect 
-  const translate = (text)=>{
   
-  const dic = {
-    completed : 'Completado',
-    pending: 'Pendiente',
-    deleted: 'Eliminado'
-  }
+  const translate = (text)=>{  
+    const dic = {
+      completed : 'Completado',
+      pending: 'Pendiente',
+      deleted: 'Eliminado'
+    }
   const toReturn = dic[text] || text
   return toReturn
 }

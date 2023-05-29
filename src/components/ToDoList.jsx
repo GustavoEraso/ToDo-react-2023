@@ -8,13 +8,14 @@ import { useContext } from "react";
 
 function ToDoList(){
     const {todos, completedTodosList, pendingTodosList, searchedTodos, error, loading} = useContext(ToDoContext);
+    
 
     if(loading){
         return(<ToDoLoading />)};
     if(error) 
         return(<p>vaya algo salio mal</p>)  
-    if(!todos.length) 
-        return(<p>hey carga una tarea</p>)  
+    if(!pendingTodosList.length && !completedTodosList.length) 
+        return(<></>)  
     if(searchedTodos.length > 0) 
         return(
          <section className="ToDoList-main-container">
