@@ -13,6 +13,12 @@
 
     
 }
+
+.deleting{
+    animation: 0.5s delete-animation ease-in 1;
+    animation-fill-mode: forwards; 
+
+}
 .ToDoItem__text{
     display: flex;
     flex-direction: column;
@@ -34,6 +40,7 @@
     border-radius: 50%;
     background-color: var(--main-background);
     box-shadow: inset 5px 5px var(--line-color);
+    cursor: pointer;
 }
 
 .ToDoItem__checkbox{
@@ -71,3 +78,17 @@
     
 }
 
+
+@keyframes delete-animation {
+    
+    80%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-110%);
+        opacity: 0;
+       }
+
+
+    
+}

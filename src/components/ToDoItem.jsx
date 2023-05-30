@@ -27,10 +27,13 @@ function ToDoItem({
 
   const [deleteState, setDeleteState] = useState(false)
   const [restoreState, setRestoreState] = useState(false)
+
+  const[deleting, setDeleting]= useState('')
   
   
 
 function handleDelete(todo){
+ 
   setCurrentTodo(todo)
   setDeleteState(true)    
 }
@@ -40,7 +43,7 @@ function handleRestore(todo){
 }
 return(
 <>
-    <li className='ToDoItem' key={todo.id}>
+    <li className={!deleting ?'ToDoItem' :'ToDoItem deleting'} key={todo.id}>
       <input 
           className='ToDoItem__checkbox' 
           type="checkbox" 
@@ -86,7 +89,10 @@ return(
           :<ToDoModal>
             <PopupConfirmation
             question={["Desea enviar a la papelera" ,`"${currentTodo.title}"`]}
-            handleConfirmation={()=>deleteTodo(currentTodo.id)}
+            handleConfirmation={()=>{
+              setDeleting(true);
+              setDeleteState(false);
+              setTimeout(()=>{deleteTodo(currentTodo.id)}, 500)}}
             handleCancel={()=>setDeleteState(false)}
             />
           </ToDoModal>  
@@ -95,7 +101,6 @@ return(
           ?null
           :<ToDoModal>
             <PopupConfirmation
-            // question={`Desea restaurar "${currentTodo.title}"`}
             question={['Desea restaurar ',`"${currentTodo.title}"`]}
             handleConfirmation={()=>restoreTodo(currentTodo.id)}
             handleCancel={()=>setRestoreState(false)}
