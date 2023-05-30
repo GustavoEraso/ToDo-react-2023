@@ -26,7 +26,11 @@ function ToDoAdd(){
     const {toggleNewTodoModal, settoggleNewTodoModal} = useContext(ToDoContext)
     
     return(
-        <span className={isEmpy ?"ToDoAdd animated" : "ToDoAdd"} onClick={()=>settoggleNewTodoModal(!toggleNewTodoModal)} ><AddIcon alt="add button" className= 'ToDoAdd__img' /></span>   )
+        <span 
+            className={isEmpy ?"ToDoAdd animated" : "ToDoAdd"} 
+            onClick={()=>settoggleNewTodoModal(!toggleNewTodoModal)}>  
+                <AddIcon alt="add button" className= 'ToDoAdd__img' />
+            </span>   )
 }
 
 export {ToDoAdd}
