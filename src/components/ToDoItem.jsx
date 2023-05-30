@@ -78,8 +78,6 @@ return(
           className='ToDoItem__delete-img' 
           alt={`Delete button for ${todo.text}`}
           onClick={()=>handleDelete(todo)}     />
-          
-          
 
       } 
 
