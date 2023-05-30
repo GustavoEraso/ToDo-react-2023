@@ -45,7 +45,7 @@
     background-color: var(--main-background);;
   }
   100%{
-    background-color:  5px 5px var(--green);
+    background-color: var(--green);
   }
   
 }
