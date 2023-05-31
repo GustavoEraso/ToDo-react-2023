@@ -1,6 +1,9 @@
+// doc https://www.npmjs.com/package/react-confetti-explosion
+import ConfettiExplosion from 'react-confetti-explosion'  
+
 import '../styles/ToDoItem.css'
 
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ToDoContext } from './ToDoContext'
 import { PopupConfirmation } from './PopupConfirmation'
 import { ToDoModal } from './ToDoModal'
@@ -13,7 +16,8 @@ function ToDoItem({
   todo, 
   disabled,
 }){ 
-
+  
+  
   const {
     completedTodo,
     restoreTodo,
@@ -24,23 +28,39 @@ function ToDoItem({
   }= useContext(ToDoContext)
 
   // const fecha= new Date(todo.endingDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
+  
   const [deleteState, setDeleteState] = useState(false)
   const [restoreState, setRestoreState] = useState(false)
-
-  const[deleting, setDeleting]= useState('')
+  
+  const[deleting, setDeleting]= useState('') 
   
   
+  function handleDelete(todo){
+    
+    setCurrentTodo(todo)
+    setDeleteState(true)    
+  }
+  function handleRestore(todo){
+    setCurrentTodo(todo)
+    setRestoreState(true)    
+  }
 
-function handleDelete(todo){
- 
-  setCurrentTodo(todo)
-  setDeleteState(true)    
+  const[explodingControl, setIsExplodingControl] = useState(false)
+  const [isExploding, setIsExploding] = useState(false);
+useEffect(()=>{
+  
+ if( todo.completed && todo.status === 'completed'){
+   setIsExploding(true)
+ }
+  
+
+  console.log(isExploding);
+},[explodingControl])
+
+const handleExploding = ()=>{
+  setIsExplodingControl(!explodingControl)
 }
-function handleRestore(todo){
-  setCurrentTodo(todo)
-  setRestoreState(true)    
-}
+
 return(
 <>
     <li className={!deleting ?'ToDoItem' :'ToDoItem deleting'} key={todo.id}>
@@ -50,11 +70,19 @@ return(
           name= {todo.id}
           checked={todo.completed} 
           id={todo.id} 
-          onChange={()=>completedTodo(todo.id)}
+          onChange={()=>{    
+            handleExploding()
+            completedTodo(todo.id);           
+          }}
           disabled = {disabled} 
-           
-      />
-      <label className='ToDoItem__label-checkbox' htmlFor={todo.id}></label>
+          
+          />
+      <label 
+      className='ToDoItem__label-checkbox' 
+      htmlFor={todo.id}
+      >
+        {isExploding ?<ConfettiExplosion /> :null}
+      </label>
       <span 
       className='ToDoItem__text'
       onClick={()=>
