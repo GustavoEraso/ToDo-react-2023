@@ -7,22 +7,21 @@ import { ToDoContext } from './ToDoContext'
 
 
 
-function ToDoAdd(){
-    const {
-        pendingTodosList,
-        completedTodosList
-    }= useContext(ToDoContext);
-
-    const {completedTodosCounter, totalTodosCounter} = useContext(ToDoContext);
+function ToDoAdd({big}){
     
-    const [isEmpy, setIsEmpy] =useState(totalTodosCounter === completedTodosCounter ) 
+    const {
+        totalTodosCounter, 
+        toggleNewTodoModal, 
+        settoggleNewTodoModal,
+    } = useContext(ToDoContext);
+    
+    const [isEmpy, setIsEmpy] =useState(false ) 
+
     useEffect(()=>{
         setIsEmpy(totalTodosCounter === 0 )
-    },[completedTodosCounter, totalTodosCounter])
+    },[totalTodosCounter])
     
-    
-    const {toggleNewTodoModal, settoggleNewTodoModal} = useContext(ToDoContext)
-    
+
     return(
         <span 
             className={isEmpy ?"ToDoAdd animated" : "ToDoAdd"} 

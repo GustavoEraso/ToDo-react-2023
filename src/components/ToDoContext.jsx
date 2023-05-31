@@ -28,8 +28,9 @@ const transformDate = (date)=>{
   
   const deletedTodos = todos.filter((todo)=>todo.status ==='deleted').sort((a,b)=> b.endingDate - a.endingDate);
 
-    const getToDos = ()=>{
-    setLoading(true)
+    const getToDos = ()=>{      
+      //comment setLoading() because i don't like loading between restored 
+    // setLoading(true)  
     const todosFromStorage = window.localStorage.getItem('TODOS_V1')
       
     return JSON.parse(todosFromStorage);
@@ -43,8 +44,10 @@ const transformDate = (date)=>{
         const todosFromStorage = getToDos();
         
         setTodos(todosFromStorage || []); 
-        
-        setLoading(false)  
+                
+        setTimeout(()=>{
+          setLoading(false)  
+        },1000)
         
       
     } catch (error) {
@@ -52,7 +55,7 @@ const transformDate = (date)=>{
       console.log('tuvimos un error') 
       setError(true)          
     }
-    },[oldTodos])          
+    },[oldTodos]) 
 
    function resetTodos(newTodoList){    
     setTodos(newTodoList)

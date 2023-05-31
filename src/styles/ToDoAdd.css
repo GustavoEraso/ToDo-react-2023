@@ -12,10 +12,8 @@
   background-color: var(--item-background);
   outline: 2px solid var(--line-color);
   box-shadow: 5px 5px var(--line-color); 
-  transition: 500ms ease; 
-  animation: 0.5s empyTraslate-return ease-in 1;  
-  animation-fill-mode: forwards;
-   
+  transition: box-shadow 500ms ease, translate 500ms ease; 
+    
 }
 
 .ToDoAdd:active{      
