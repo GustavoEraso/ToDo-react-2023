@@ -1,8 +1,5 @@
 
 .ToDoButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: none;
     border-radius: 50px;
     background-color: var(--white);
@@ -10,17 +7,44 @@
     box-shadow: 5px 5px var(--line-color); 
     width: 80%;
     height: 80%;
+    min-height: 40px;
     place-self: center;
     font-weight: 700;
-    cursor: pointer;
-    
+    cursor: pointer;        
 }
 
+
+.ToDoButton--confirm{
+    background-color: var(--green);
+    
+}
+.ToDoButton--confirm:focus{
+    background: linear-gradient( 30deg, var(--main-background), var(--item-background), var(--input-background));  
+    background-size: 400%;
+    animation: focus-background 3s ease-in-out infinite;   
+    
+}
 .ToDoButton--cancel{
     background-color: var(--red);
     color: var(--white);
 }
-.ToDoButton--confirm{
-    background-color: var(--green);
+.ToDoButton--cancel:focus{
+    color: var(--line-color);
+    background: linear-gradient( 30deg, var(--main-background), var(--item-background),var(--red) 110%);  
+    background-size: 400%;
+    animation: focus-background 3s ease-in-out infinite;   
     
+}
+
+@keyframes focus-background {
+    
+    0%{
+        background-position: 0% 50%
+    }
+    50%{
+        background-position: 100% -50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }

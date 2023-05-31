@@ -8,15 +8,13 @@ function ToDoButton({type=false, handleClick , children}){
         confirm : 'ToDoButton--confirm',
     }
     return(
-        <span
-            onSubmit={(e)=>e.preventDefault()}
-            className={`ToDoButton ${type ?typeButton?.[type] :''}`}
-            onClick={()=>handleClick()}
-            >
-                <span>
-                    {children}
-                </span>
-        </span>
+        <input
+        className={`ToDoButton ${type ?typeButton?.[type] :''}`} 
+        type="button" 
+        value={children}
+        onClick={()=>handleClick()}
+        />
+        
     )
 }
 
