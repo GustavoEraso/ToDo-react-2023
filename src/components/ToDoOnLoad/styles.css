@@ -1,0 +1,54 @@
+
+
+.ToDoOnLoad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    animation: 3s moveBackground ease infinite;
+}
+
+.ToDoOnLoad__text{
+    font-size: 2rem;
+    font-weight: 900;
+    animation: 1s loading ease infinite;
+}
+.ToDoOnLoad__text::after{
+    content: '';
+    animation: 2s loading ease infinite;
+}
+
+@keyframes moveBackground {
+    0%{
+      background-color: var(--green);
+    }
+  
+    50%{
+      background-color: var(--main-background);;
+    }
+    100%{
+      background-color: var(--green);
+    }
+}
+@keyframes loading {
+    0%{
+      content: '';
+    }
+  
+    16.6%{
+        content: '.';
+    }
+    33.2%{
+        content: '..';
+    }
+    49.8%{
+        content: '...';
+    }
+    66.4%{
+        content: '..';
+    }
+    83%{
+        content: '.';
+    }
+}

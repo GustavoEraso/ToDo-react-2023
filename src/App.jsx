@@ -12,6 +12,8 @@ import { ToDoModal } from './components/ToDoModal';
 import {PopupConfirmation} from './components/PopupConfirmation'
 import { ToDoContext, ToDoProvider } from './components/ToDoContext';
 import { ToDoItemDetail } from './components/ToDoItemDetail';
+import { ToDoOnLoad } from './components/ToDoOnLoad';
+
 
 
 function App() {
@@ -23,8 +25,11 @@ function App() {
   function closeTrash(){
     setToggleTrash(false)
   }
-  const {toggleNewTodoModal, toggleItemDetailModal, toggleTrash, setToggleTrash} = useContext(ToDoContext); 
+  const {toggleNewTodoModal, toggleItemDetailModal, toggleTrash, setToggleTrash, loading} = useContext(ToDoContext); 
+
   
+  
+
   return (            
         <section className='main-container'>       
         <ToDoTitle />
@@ -39,7 +44,7 @@ function App() {
           <span className='App__open-deleted-list' onClick={()=>setToggleTrash(!toggleTrash)}>
             <TrashImg fill="#f21e1e" alt="trash image for view trash button" />
           </span>      
-        <ToDoAdd/>
+        {loading ?null :<ToDoAdd/>}
        {toggleNewTodoModal 
           ? <ToDoModal>
               <ToDoNewToDo/>
@@ -49,7 +54,7 @@ function App() {
           ? <ToDoModal>
               <ToDoItemDetail />
             </ToDoModal> 
-          : null}          
+          : null}                 
 
         </section>   
    

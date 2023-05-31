@@ -39,21 +39,20 @@ const transformDate = (date)=>{
     try {
       setError(false)         
       // if (true) {throw new Error("");return}
-      setTimeout( ()=>{
+     
         const todosFromStorage = getToDos();
         
         setTodos(todosFromStorage || []); 
+        
         setLoading(false)  
-      }, 2000)   
+        
       
     } catch (error) {
       setLoading(false)
       console.log('tuvimos un error') 
       setError(true)          
     }
-    },[oldTodos])
-    
-  
+    },[oldTodos])          
 
    function resetTodos(newTodoList){    
     setTodos(newTodoList)

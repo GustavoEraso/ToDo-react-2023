@@ -20,9 +20,7 @@ function ToDoAdd(){
         setIsEmpy(totalTodosCounter === 0 )
     },[completedTodosCounter, totalTodosCounter])
     
-    console.log(isEmpy)
-
-
+    
     const {toggleNewTodoModal, settoggleNewTodoModal} = useContext(ToDoContext)
     
     return(
