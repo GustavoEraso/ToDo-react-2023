@@ -1,0 +1,35 @@
+
+.ToDoFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100vw;
+    min-height: 80px;
+    padding: 20px 0;
+    background: linear-gradient(312deg, var(--main-background), var(--item-background));
+}
+
+.ToDoFooter__text{
+    text-align: center;
+}
+Retro Todo
+.ToDoFooter__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;   
+}
+.ToDoFooter__ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+}
+
+.ToDoFooter__ul li *{    
+    width: 32px;
+    height: 32px;
+}

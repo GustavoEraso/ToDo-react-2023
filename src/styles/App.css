@@ -1,8 +1,11 @@
 main{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  gap: 40px;
+  min-height: calc(100vh + 30px);
+  padding-block-start: 30px;
 }
 .main-container{
   position: relative;

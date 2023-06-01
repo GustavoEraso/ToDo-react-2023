@@ -47,14 +47,13 @@ function ToDoItem({
 
   const[explodingControl, setIsExplodingControl] = useState(false)
   const [isExploding, setIsExploding] = useState(false);
+
 useEffect(()=>{
-  
+
  if( todo.completed && todo.status === 'completed'){
    setIsExploding(true)
- }
-  
+ } 
 
-  console.log(isExploding);
 },[explodingControl])
 
 const handleExploding = ()=>{

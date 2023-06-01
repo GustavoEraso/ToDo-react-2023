@@ -13,6 +13,7 @@ import {PopupConfirmation} from './components/PopupConfirmation'
 import { ToDoContext, ToDoProvider } from './components/ToDoContext';
 import { ToDoItemDetail } from './components/ToDoItemDetail';
 import { ToDoOnLoad } from './components/ToDoOnLoad';
+import { ToDoFooter } from './components/ToDoFooter';
 
 
 
@@ -30,7 +31,9 @@ function App() {
   
   
 
-  return (            
+  return (    
+  <>
+          
         <section className='main-container'>       
         <ToDoTitle />
         <ToDoInput />
@@ -57,6 +60,10 @@ function App() {
           : null}                 
 
         </section>   
+
+        <ToDoFooter />
+
+        </>
    
   );
 }
