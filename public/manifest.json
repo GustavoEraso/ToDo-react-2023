@@ -1,6 +1,6 @@
 {
-  "short_name": "Mi Todo",
-  "name": "prueba ToDo",
+  "short_name": "Retro Todo",
+  "name": "Retro ToDo",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "react192.png",
+      "src": "retroTodo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "react512.png",
+      "src": "retroTodo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
