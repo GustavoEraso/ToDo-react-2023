@@ -99,15 +99,43 @@ const transformDate = (date)=>{
     resetTodos(newTodoList)
 
   };
+
+  const[explodingControl, setIsExplodingControl] = useState(false)
+  const [isExploding, setIsExploding] = useState(false);
+  const [endDateExploding, setEndDateExploding] = useState(new Date().getTime())
+
+  useEffect(()=>{ 
+    setIsExploding(true)   
+    setTimeout(()=>{   
+    const actuallyDate = new Date().getTime();  
+    const timePased = actuallyDate - endDateExploding
+    
+    if(timePased){
+      setIsExploding(false)
+      setEndDateExploding(new Date().getTime())      
+    }   
+    },2200) 
+    
   
- 
+  },[explodingControl])   
+
+  const handleExploding = ()=>{   
+      setIsExplodingControl(!explodingControl)
+
+  }
 
 
   const completedTodo = (id)=>{
     const actuallyDate = new Date().getTime();       
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo)=> todo.id === id)
-    newTodos[todoIndex].status = newTodos[todoIndex].status === 'pending' ? 'completed' : 'pending';
+
+    if(newTodos[todoIndex].status === 'pending'){
+       newTodos[todoIndex].status = 'completed'
+       handleExploding()
+    }else{
+      newTodos[todoIndex].status = 'pending'
+    }
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     newTodos[todoIndex].endingDate = actuallyDate
     resetTodos(newTodos)
@@ -175,6 +203,7 @@ const empyTrash=()=>{
             setToggleTrash,
             translate,
             transformDate,
+            isExploding,
         }}>
             {children}
 

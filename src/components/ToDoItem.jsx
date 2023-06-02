@@ -1,5 +1,3 @@
-// doc https://www.npmjs.com/package/react-confetti-explosion
-import ConfettiExplosion from 'react-confetti-explosion'  
 
 import '../styles/ToDoItem.css'
 
@@ -45,20 +43,6 @@ function ToDoItem({
     setRestoreState(true)    
   }
 
-  const[explodingControl, setIsExplodingControl] = useState(false)
-  const [isExploding, setIsExploding] = useState(false);
-
-useEffect(()=>{
-
- if( todo.completed && todo.status === 'completed'){
-   setIsExploding(true)
- } 
-
-},[explodingControl])
-
-const handleExploding = ()=>{
-  setIsExplodingControl(!explodingControl)
-}
 
 return(
 <>
@@ -69,8 +53,7 @@ return(
           name= {todo.id}
           checked={todo.completed} 
           id={todo.id} 
-          onChange={()=>{    
-            handleExploding()
+          onChange={()=>{  
             completedTodo(todo.id);           
           }}
           disabled = {disabled} 
@@ -80,7 +63,7 @@ return(
       className='ToDoItem__label-checkbox' 
       htmlFor={todo.id}
       >
-        {isExploding ?<ConfettiExplosion /> :null}
+        
       </label>
       <span 
       className='ToDoItem__text'

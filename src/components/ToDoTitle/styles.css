@@ -1,0 +1,11 @@
+.ToDoTitle{
+    font-size: 1rem;
+    text-align: center;
+}
+.ToDoTitle__title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
