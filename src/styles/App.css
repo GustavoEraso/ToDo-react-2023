@@ -6,10 +6,15 @@ main{
   gap: 40px;
   min-height: calc(100vh + 30px);
   padding-block-start: 30px;
+  background-image: url('../assets/imgs/bg2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .main-container{
   position: relative;
   width: calc(100% - 30px);
+  max-width: 768px;
   height: 90vh;
   padding: 10px;
   border-radius: 15px;
@@ -18,7 +23,10 @@ main{
   display: flex;
   flex-direction: column;
   gap: 10px;  
-  background: linear-gradient(312deg, var(--main-background), var(--item-background));
+  /* background: linear-gradient(312deg, var(--main-background), var(--item-background)); */
+  background: linear-gradient(312deg, var(--app-background-1), var(--app-background-2));
+  
+
   
 }
 

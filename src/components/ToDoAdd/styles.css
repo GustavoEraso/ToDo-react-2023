@@ -13,7 +13,6 @@
   outline: 2px solid var(--line-color);
   box-shadow: 5px 5px var(--line-color); 
   transition: box-shadow 500ms ease, translate 500ms ease; 
-    
 }
 
 .ToDoAdd:active{      
@@ -29,21 +28,27 @@
 
 .animated{   
   transform: scale(3);
-  animation: 1.5s clickMe ease-in infinite, 0.5s empyTraslate ease-in 1;  
+  transition: 600ms ease-in;
+  animation: 1.5s clickMe ease-in infinite, 0.5s empyTraslate ease-in 1; 
   animation-fill-mode: forwards;
 }
+
+
 
 
 @keyframes clickMe {
   0%{
     background-color: var(--green);
+    box-shadow: 5px 5px var(--line-color), 0 0 30px 30px white;
   }
 
   50%{
-    background-color: var(--main-background);;
+    background-color: var(--main-background);
+    box-shadow: 5px 5px var(--line-color), 0 0 30px 10px white;
   }
   100%{
     background-color: var(--green);
+    box-shadow: 5px 5px var(--line-color), 0 0 30px 30px white;
   }
   
 }
