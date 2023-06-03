@@ -41,6 +41,17 @@
     cursor: pointer;
 }
 
+.ToDoItem__checkImg{
+    height: 20px;
+    width: 20px;
+    fill: var(--white);
+}
+
+.ToDoItem__checkImg--completed{
+    fill: var(--line-color);
+
+}
+
 .ToDoItem__checkbox{
     display: none;
     z-index: -1;

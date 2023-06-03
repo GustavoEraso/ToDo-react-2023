@@ -1,20 +1,21 @@
 
-import '../styles/ToDoItem.css'
+import './styles.css'
 
 import { useContext, useEffect, useState } from 'react'
-import { ToDoContext } from './ToDoContext'
-import { PopupConfirmation } from './PopupConfirmation'
-import { ToDoModal } from './ToDoModal'
+import { ToDoContext } from '../ToDoContext'
+import { PopupConfirmation } from '../PopupConfirmation'
+import { ToDoModal } from '../ToDoModal'
 
-import {ReactComponent as DeleteImg} from '../assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
-import {ReactComponent as RestoreImg} from '../assets/icons/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg'
+import {ReactComponent as CheckImg} from './done_FILL0_wght700_GRAD200_opsz48.svg'
+import {ReactComponent as DeleteImg} from '../../assets/icons/delete_FILL0_wght400_GRAD0_opsz48.svg'
+import {ReactComponent as RestoreImg} from '../../assets/icons/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg'
+
 
 
 function ToDoItem({
   todo, 
   disabled,
-}){ 
-  
+}){  
   
   const {
     completedTodo,
@@ -43,6 +44,8 @@ function ToDoItem({
     setRestoreState(true)    
   }
 
+ 
+
 
 return(
 <>
@@ -63,6 +66,11 @@ return(
       className='ToDoItem__label-checkbox' 
       htmlFor={todo.id}
       >
+        {!todo.completed
+          ?<CheckImg className='ToDoItem__checkImg'/>
+          :<CheckImg className='ToDoItem__checkImg ToDoItem__checkImg--completed ' />
+        }
+          
         
       </label>
       <span 
