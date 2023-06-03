@@ -1,0 +1,28 @@
+.ToDoInput__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    min-height: 30px;
+    outline: none;
+    border-radius: 50px;
+    background-color: var(--input-background);
+    box-shadow: inset 1px 1px var(--line-color);
+    
+}
+
+.ToDoInput__input{    
+    padding: 0 10px;
+    min-height: 30px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background-color: transparent;
+}
+
+
+.ToDoItem__label{
+    height: 30px;
+    width: 30px;    
+}
