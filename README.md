@@ -10,20 +10,20 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 ## Funcionalidades que agregue:
 * Descripción en tareas, para así poder tener una lista más limpia y tener más contexto sobre la tarea a realizar.
 * Detalles opción detalles en tareas donde podrás ver:
-   + Estado (pendiente, completada, Eliminada)
-   + Fecha de creación
-   + Fecha de finalizada
+  + Estado (pendiente, completada, Eliminada)
+  + Fecha de creación
+  + Fecha de finalizada
 * Opción de editar las tareas.
 * Sección papelera, donde poder ver las tareas eliminadas.
-   + En esta sección tiene la posibilidad de:
-      - Restaurar una tarea eliminada.
-      - Ver descripción de una tarea eliminada.
-      - Eliminar definitivamente las tareas.
+  + En esta sección tiene la posibilidad de:
+     - Restaurar una tarea eliminada.
+     - Ver descripción de una tarea eliminada.
+     - Eliminar definitivamente las tareas.
 * Popup de confirmación al momento de:
-    + Querer editar una Tarea.
-    + Querer eliminar una tarea.
-    + Querer restaurar una tarea.
-    + Querer Eliminar definitivamente las tareas eliminadas
+     + Querer editar una Tarea.
+     + Querer eliminar una tarea.
+     + Querer restaurar una tarea.
+     + Querer Eliminar definitivamente las tareas eliminadas
 
 
 
