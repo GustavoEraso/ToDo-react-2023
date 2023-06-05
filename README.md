@@ -33,7 +33,7 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 
 ### Pantalla general:
 
-![captura de pantalla general ](https://drive.google.com/file/d/1hz8WboIlxPYUajSBiO21I-yGz9im1hMA/view?usp=sharing)
+![captura de pantalla general ](http://drive.google.com/uc?export=view&id=1hz8WboIlxPYUajSBiO21I-yGz9im1hMA)
 
 
 
