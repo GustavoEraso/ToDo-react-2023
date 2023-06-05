@@ -1,12 +1,33 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# RetroTodo 
+RetroTodo es una lista de tareas pendientes con la que podrás ayudar a tu memoria y que no quede ninguna tarea sin cumplir.
 
-¡Hola, Platzinauta!
+RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi.com/cursos/react/), pero quize agregarle algunas funcionalidades extras además de las propuestas en el curso:
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+## Funcionalidades propuestas en el curso:
+* Agregar tareas.
+* Eliminar tareas.
+* Buscador de tareas.
+## Funcionalidades que agregue:
+* Descripción en tareas, para así poder tener una lista más limpia y tener más contexto sobre la tarea a realizar.
+* Detalles opción detalles en tareas donde podrás ver:
+   + Estado (pendiente, completada, Eliminada)
+   + Fecha de creación
+   + Fecha de finalizada
+* Opción de editar las tareas.
+* Sección papelera, donde poder ver las tareas eliminadas.
+   + En esta sección tiene la posibilidad de:
+      - Restaurar una tarea eliminada.
+      - Ver descripción de una tarea eliminada.
+      - Eliminar definitivamente las tareas.
+* Popup de confirmación al momento de:
+    + Querer editar una Tarea.
+    + Querer eliminar una tarea.
+    + Querer restaurar una tarea.
+    + Querer Eliminar definitivamente las tareas eliminadas
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+
+
 
 ## Getting Started with Create React App
 
