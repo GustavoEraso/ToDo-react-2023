@@ -33,7 +33,7 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 
 ### Pantalla general:
 
-<img src="https://postimg.cc/Lq55dVfM" width="200" alt="imagen de pantalla general" />
+<img src="https://i.postimg.cc/CKHqqPxd/main.jpg" width="200" alt="imagen de pantalla general" />
 
 
 ## Getting Started with Create React App
