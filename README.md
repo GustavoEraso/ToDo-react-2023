@@ -33,7 +33,7 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 
 ### Pantalla general:
 
-<img src="https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg" width="200" alt="imagen de pantalla general" />
+<img src="https://postimg.cc/Lq55dVfM" width="200" alt="imagen de pantalla general" />
 
 
 ## Getting Started with Create React App
