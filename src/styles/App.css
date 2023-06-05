@@ -6,7 +6,7 @@ main{
   gap: 40px;
   min-height: calc(100vh + 30px);
   padding-block-start: 30px;
-  background-image: url('../assets/imgs/bg2.jpg');
+  background-image: url('../assets/imgs/bg500.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,4 +57,20 @@ main{
 .App__open-deleted-list * {
   width: 70%;
   filter: drop-shadow( 1px 1px var(--line-color) )
+}
+
+
+@media screen and (min-width: 425px) {
+
+  main{
+    background-image:url('../assets/imgs/bg1000.jpg')
+  }
+  
+}
+@media screen and (min-width: 1024px) {
+
+  main{
+    background-image:url('../assets/imgs/bg2000.jpg')
+  }
+  
 }
