@@ -28,12 +28,34 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 
 * Efecto confetti explosion al completar una tarea.
 
-
 ## Capturas de pantalla
 
 ### Pantalla general:
 
 <img src="https://i.postimg.cc/CKHqqPxd/main.jpg" width="200" alt="imagen de pantalla general" />
+
+### Nueva Tarea:
+
+<img src="https://i.postimg.cc/J7xm1qTb/nueva-tarea.jpg" width="200" alt="imagen modal de nueva tarea" />
+
+### Ver Tarea:
+
+<img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg" width="200" alt="imagen modal de ver tarea" />
+
+### Ver detalles de tarea:
+
+<img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg" width="200" alt="imagen modal de ver detalles de tarea" />
+
+### Popup de confirmación:
+
+<img src="https://i.postimg.cc/Nf0yYLxj/popup-confirmacion-edicion.jpg" width="200" alt="imagen modal de confirmacion" />
+
+### Efecto confetti:
+
+<img src="https://i.postimg.cc/hvkNCXD1/confetti.jpg" width="200" alt="imagen efecto confetti" />
+
+
+
 
 
 ## Getting Started with Create React App
