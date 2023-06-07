@@ -1,3 +1,34 @@
+<style>
+  *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  ul{
+    padding-left: 50px;
+  }
+  .readme-cards-container{    
+    display:flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .readme-card{
+    height:480px;
+    width: 200px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 5px 45px;
+    box-shadow: 0 0 15px black;
+    align-items: center;
+    overflow:hidden;
+    text-align:center;
+  }
+
+</style>
+
+
 # RetroTodo 
 RetroTodo es una lista de tareas pendientes con la que podrás ayudar a tu memoria y que no quede ninguna tarea sin cumplir.
 
@@ -10,20 +41,71 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 ## Funcionalidades que agregue:
 * Descripción en tareas, para así poder tener una lista más limpia y tener más contexto sobre la tarea a realizar.
 * Detalles opción detalles en tareas donde podrás ver:
-   + Estado (pendiente, completada, Eliminada)
-   + Fecha de creación
-   + Fecha de finalizada
+  + Estado (pendiente, completada, Eliminada)
+  + Fecha de creación
+  + Fecha de finalizada
 * Opción de editar las tareas.
 * Sección papelera, donde poder ver las tareas eliminadas.
-   + En esta sección tiene la posibilidad de:
-      - Restaurar una tarea eliminada.
-      - Ver descripción de una tarea eliminada.
-      - Eliminar definitivamente las tareas.
+  + En esta sección tiene la posibilidad de:
+     - Restaurar una tarea eliminada.
+     - Ver descripción de una tarea eliminada.
+     - Eliminar definitivamente las tareas.
 * Popup de confirmación al momento de:
-    + Querer editar una Tarea.
-    + Querer eliminar una tarea.
-    + Querer restaurar una tarea.
-    + Querer Eliminar definitivamente las tareas eliminadas
+     + Querer editar una Tarea.
+     + Querer eliminar una tarea.
+     + Querer restaurar una tarea.
+     + Querer Eliminar definitivamente las tareas eliminadas
+
+
+* Efecto confetti explosion al completar una tarea.
+
+
+
+<h2> Capturas de pantalla </h2>
+
+<section class="readme-cards-container">
+
+<div class="readme-card">
+
+  <h3> Pantalla general: </h3>
+
+  <img src="https://i.postimg.cc/CKHqqPxd/main.jpg" alt="imagen de pantalla general" />
+
+</div>
+<div class="readme-card">
+
+  <h3> Nueva Tarea: </h3>
+
+  <img src="https://i.postimg.cc/J7xm1qTb/nueva-tarea.jpg" alt="imagen modal de nueva tarea" />
+</div>
+
+<div class="readme-card">
+
+<h3> Ver Tarea: </h3>
+
+<img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg"  alt="imagen modal de ver tarea" />
+</div>
+<div class="readme-card">
+
+  <h3> Ver detalles de tarea: </h3>
+
+  <img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg"  alt="imagen modal de ver detalles de tarea" />
+</div>
+
+<div class="readme-card">
+
+  <h3> Popup de confirmación: </h3>
+  <img src="https://i.postimg.cc/Nf0yYLxj/popup-confirmacion-edicion.jpg" alt="imagen modal de confirmacion" />
+</div>
+
+<div class="readme-card">
+
+ <h3> Efecto confetti: </h3>
+
+  <img src="https://i.postimg.cc/hvkNCXD1/confetti.jpg" alt="imagen efecto confetti" />
+
+</div>
+</section>
 
 
 
