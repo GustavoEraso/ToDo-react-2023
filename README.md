@@ -1,3 +1,34 @@
+<style>
+  *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  ul{
+    padding-left: 50px;
+  }
+  .readme-cards-container{    
+    display:flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .readme-card{
+    height:480px;
+    width: 200px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 5px 45px;
+    box-shadow: 0 0 15px black;
+    align-items: center;
+    overflow:hidden;
+    text-align:center;
+  }
+
+</style>
+
+
 # RetroTodo 
 RetroTodo es una lista de tareas pendientes con la que podrás ayudar a tu memoria y que no quede ninguna tarea sin cumplir.
 
@@ -28,31 +59,53 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 
 * Efecto confetti explosion al completar una tarea.
 
-## Capturas de pantalla
 
-### Pantalla general:
 
-<img src="https://i.postimg.cc/CKHqqPxd/main.jpg" width="200" alt="imagen de pantalla general" />
+<h2> Capturas de pantalla </h2>
 
-### Nueva Tarea:
+<section class="readme-cards-container">
 
-<img src="https://i.postimg.cc/J7xm1qTb/nueva-tarea.jpg" width="200" alt="imagen modal de nueva tarea" />
+<div class="readme-card">
 
-### Ver Tarea:
+  <h3> Pantalla general: </h3>
 
-<img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg" width="200" alt="imagen modal de ver tarea" />
+  <img src="https://i.postimg.cc/CKHqqPxd/main.jpg" alt="imagen de pantalla general" />
 
-### Ver detalles de tarea:
+</div>
+<div class="readme-card">
 
-<img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg" width="200" alt="imagen modal de ver detalles de tarea" />
+  <h3> Nueva Tarea: </h3>
 
-### Popup de confirmación:
+  <img src="https://i.postimg.cc/J7xm1qTb/nueva-tarea.jpg" alt="imagen modal de nueva tarea" />
+</div>
 
-<img src="https://i.postimg.cc/Nf0yYLxj/popup-confirmacion-edicion.jpg" width="200" alt="imagen modal de confirmacion" />
+<div class="readme-card">
 
-### Efecto confetti:
+<h3> Ver Tarea: </h3>
 
-<img src="https://i.postimg.cc/hvkNCXD1/confetti.jpg" width="200" alt="imagen efecto confetti" />
+<img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg"  alt="imagen modal de ver tarea" />
+</div>
+<div class="readme-card">
+
+  <h3> Ver detalles de tarea: </h3>
+
+  <img src="https://i.postimg.cc/vB8qXWWs/ver-tarea.jpg"  alt="imagen modal de ver detalles de tarea" />
+</div>
+
+<div class="readme-card">
+
+  <h3> Popup de confirmación: </h3>
+  <img src="https://i.postimg.cc/Nf0yYLxj/popup-confirmacion-edicion.jpg" alt="imagen modal de confirmacion" />
+</div>
+
+<div class="readme-card">
+
+ <h3> Efecto confetti: </h3>
+
+  <img src="https://i.postimg.cc/hvkNCXD1/confetti.jpg" alt="imagen efecto confetti" />
+
+</div>
+</section>
 
 
 
