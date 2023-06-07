@@ -1,0 +1,97 @@
+<svg fill="none" viewBox="0 0 1400 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			
+	<style>
+  *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  img{
+    width:200px;
+    height:480;
+  }
+
+  ul{
+    padding-left: 50px;
+  }
+  .readme-cards-container{   
+    padding:10px;
+    display:flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+  .readme-card{
+    height:480px;
+    width: 200px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 40px 440px;
+    box-shadow: 0 0 10px  black;
+    align-items: center;
+    overflow:hidden;
+    object-fit: cover;
+    text-align:center;
+    background-color: white;
+  }
+  
+
+  img{
+    object-fit:cover;
+    height: 102%;
+  }
+
+ 
+
+</style>
+<section class="readme-cards-container">
+
+<div class="readme-card">
+ 
+  <h3> Pantalla general: </h3>
+ 
+  <img src="./capturas-retroTodo/main.JPG" alt="imagen de pantalla general" />
+
+</div>
+<div class="readme-card">
+
+  <h3> Nueva Tarea: </h3>
+
+  <img src="./capturas-retroTodo/nueva-tarea.jpg" alt="imagen modal de nueva tarea" />
+</div>
+
+<div class="readme-card">
+
+<h3> Ver Tarea: </h3>
+
+<img src="./capturas-retroTodo/ver-tarea.jpg"  alt="imagen modal de ver tarea" />
+</div>
+<div class="readme-card">
+
+  <h3> Ver detalles de tarea: </h3>
+
+  <img src="./capturas-retroTodo/detalles-tarea.jpg"  alt="imagen modal de ver detalles de tarea" />
+</div>
+
+<div class="readme-card">
+
+  <h3> Popup de confirmacion: </h3>
+  <img src="./capturas-retroTodo/popup-confirmacion-edicion.jpg" alt="imagen modal de confirmacion" />
+</div>
+
+<div class="readme-card">
+
+ <h3> Efecto confetti: </h3>
+
+  <img src="./capturas-retroTodo/confetti.jpg" alt="imagen efecto confetti" />
+
+</div>
+</section>
+
+		</div>
+	</foreignObject>
+</svg>
