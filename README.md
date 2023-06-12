@@ -33,7 +33,24 @@ RetroTodo comenzó como un [proyecto de curso de react en Platzi](https://platzi
 
 
 <h2> Capturas de pantalla </h2>
-<img src="./readme-captures/captures.svg" alt="capturas de pantalla de la app"/>
+
+  <h3> Pantalla general: </h3>
+  <img src="./capturas-retroTodo/main.JPG" height="400" alt="imagen modal de nueva tarea" />
+
+  <h3> Nueva Tarea: </h3>
+  <img src="./capturas-retroTodo/nueva-tarea.JPG" height="400" alt="imagen modal de nueva tarea" />
+
+  <h3> Ver Tarea: </h3>
+  <img src="./capturas-retroTodo/ver-tarea.JPG"  height="400" alt="imagen modal de ver tarea" />
+ 
+  <h3> Ver detalles de tarea: </h3>
+  <img src="./capturas-retroTodo/detalles-tarea.JPG"  height="400" alt="imagen modal de ver detalles de tarea" />
+
+  <h3> Popup de confirmacion: </h3>
+  <img src="./capturas-retroTodo/popup-confirmacion-edicion.JPG" height="400" alt="imagen modal de confirmacion" />
+
+  <h3> Efecto confetti: </h3>
+  <img src="./capturas-retroTodo/confetti.JPG" height="400" alt="imagen efecto confetti" />
 
 
 
